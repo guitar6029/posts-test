@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import { getPosts } from '../../api/fetchPosts';
 import type { Post } from '../../types/Post';
+
 export default function Posts(){
 
     const [posts, setPosts] = useState<Post[]>([]);
@@ -13,7 +14,7 @@ export default function Posts(){
         try {
           let response = await getPosts();
           if (response) {
-            setPosts(response.data);
+            setPosts(response.data as Post[]);
             setLoadingPosts(false);
           }
         } catch (err) {
