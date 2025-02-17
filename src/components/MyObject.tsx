@@ -11,9 +11,9 @@
   function MyObject({...props}: MyObjectProps){
     return (
       <div>
-        <span>{props.id}</span><br />
-        <span>{props.name}</span><br />
-        {props.job && <span>{props.job}</span>}
+        <span>id : {props.id}</span><br />
+        <span>name: {props.name}</span><br />
+        {props.job && <span>job: {props.job}</span>}
       </div>
     )
   }
