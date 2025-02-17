@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { getPosts } from '../src/api/fetchPosts';
 import type { Post } from '../src/types/Post';
 import Card from '../src/components/Card';
+import MyObject from './components/MyObject';
+import Button from './components/Button';
 
 const myObjectExample = {
   id: 123,
@@ -10,31 +12,6 @@ const myObjectExample = {
   job: "Programmer"
 }
 
-
-type MyObjectProps = {
-  id: number,
-  name: string,
-  job?: string
-
-}
-
-function MyObject({...props}: MyObjectProps){
-  return (
-    <div>
-      <span>{props.id}</span><br />
-      <span>{props.name}</span><br />
-      {props.job && <span>{props.job}</span>}
-    </div>
-  )
-}
-
-type ButtonProps = {
-  clickedHello: () => void;
-}
-
-function Button({clickedHello} : ButtonProps) {
-  return <button onClick={clickedHello}>Hello</button>
-}
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
