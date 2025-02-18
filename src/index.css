@@ -22,6 +22,26 @@ body {
 
 }
 
+.tab {
+  padding: .5rem;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+
+}
+
+.tab:hover{
+  cursor: pointer;
+}
+
+.default-tab{
+  border-color:  gray;
+}
+
+.selected-tab{
+  border-color:  red;
+}
+
 .flex{
   display: flex;
   flex-direction: row;

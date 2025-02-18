@@ -6,11 +6,19 @@ import {useState} from 'react'
 
 function App() {
 
-  const [currentBtn, setBtn] = useState<string>('About')
+  const [currentTab, setTab] = useState<string>()
 
   const handleClick = (e: string) => {
 
-    setBtn(e)
+    setTab(e)
+  }
+  let tabSelected = <p>Please select a tab</p>
+
+  if (currentTab){
+    tabSelected = <TabButton classStr="p-1" title={currentTab} tabClicked={handleClick}>
+    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, provident!</span>
+</TabButton>
+
   }
 
   return (
@@ -19,14 +27,13 @@ function App() {
         <h1>Post Info</h1>
       </MyWrapper>
       <Posts />
-      <span>Current Btn Clicked : {currentBtn}</span>
-      <TabButton classStr="p-1" title="About" tabClicked={handleClick}>
-          <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, provident!</span>
-      </TabButton>
-
-      <TabButton classStr="p-1" title="Services" tabClicked={handleClick}>
-          <span>Lorem, ipsum dolor.</span>
-      </TabButton>
+      <div className="flex gap-1">
+        <span className={`tab ${currentTab === "About" ? 'selected-tab' : 'default-tab'} `}  onClick={() => handleClick("About")}>About</span>
+        <span className={`tab ${currentTab === "Services" ? 'selected-tab' : 'default-tab'} `} onClick={() => handleClick("Services")}>Services</span>
+      </div>
+      {tabSelected}
+      
+      
     </div>
   );
 }
