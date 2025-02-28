@@ -4,6 +4,7 @@ import Posts from './components/Posts/Posts';
 import TabButton from './components/TabButton/TabButton';
 import {useState} from 'react'
 import Content from './components/Content/Content';
+import Slider from './components/Slider/Slider';
 
 function App() {
 
@@ -45,7 +46,7 @@ function App() {
 </div>}>
         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tempora molestiae perferendis nihil facere! Qui fugiat fugit labore beatae aspernatur ad natus. Omnis labore consequatur obcaecati, molestias aliquam a quibusdam!</span>
       </Content>
-      
+      <Slider />
     </div>
   );
 }
